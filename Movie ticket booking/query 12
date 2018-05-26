@@ -1,0 +1,3 @@
+Due to some technical issues the theatre Cinepolis isnt able to play Johnny Johnny Yes Papa on 6/4/18. Remove those corresponding bookings and create a new table called Refund with all the Users whose bookings got deleted along with the price refunded.
+
+create table Refund as Select Booking_ID, web_user_id, first_name, last_name, total_cost as refunded_amount from Booking join Web_User on booking.user_id = web_user.web_user_id where Show_Id = (Select Show_Id from Show where Movie_ID = (Select Movie_ID from Movie where Name = 'Pacific Rim Uprising') and Screen_Id IN (Select Screen_ID from Screen where Theatre_ID = (Select Theatre_ID from Theatre where Name_of_Theatre = 'Cinepolis') ) and Show_Date = '6/4/18');
