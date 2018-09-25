@@ -64,7 +64,7 @@ Seats_remaining_silver int NOT NULL,
 Class_cost_gold int NOT NULL,
 Class_cost_silver int NOT NULL,
 Screen_Id varchar(5) NOT NULL,
-Movie_Id varchar(5) NOT NULL,
+Movie_Id varchar(6) NOT NULL,
 Primary key(Show_Id),
 foreign key (Screen_Id) references Screen(Screen_Id),
 foreign key (Movie_Id) references Movie(Movie_Id));
